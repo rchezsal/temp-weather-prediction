@@ -93,35 +93,6 @@ pd.DataFrame({'actual':test_y,
              'prediction':prediction,
              'diff':(test_y-prediction)})
 
-
-#**************************************************************************************************
-
-##Using Decision Tree Regressor
-from sklearn.tree import DecisionTreeRegressor
-regressor = DecisionTreeRegressor(random_state=0)
-regressor.fit(train_x,train_y)
-
-prediction3 = regressor.predict(test_x)
-np.mean((prediction3-test_y)**2)
-
-pd.DataFrame({'actual':test_y,
-             'prediction':prediction3,
-             'diff':(test_y-prediction3)})
-
-#**************************************************************************************************
-
-## Using Random Forest 
-from sklearn.ensemble import RandomForestRegressor
-regr = RandomForestRegressor(max_depth=10,random_state=0,n_estimators=100)
-regr.fit(train_x,train_y)
-
-prediction4 = regr.predict(test_x)
-np.mean((prediction4-test_y)**2)
-
-pd.DataFrame({'actual':test_y,
-             'prediction':prediction4,
-             'diff':(test_y-prediction4)})
-
 #**************************************************************************************************
 
 
